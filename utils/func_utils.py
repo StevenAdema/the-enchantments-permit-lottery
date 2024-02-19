@@ -112,6 +112,9 @@ class Utils():
         df['zone'] = df['zone'].astype(zone_order)
         df = df.sort_values(by=['application_date','zone'])
 
+        if save_csv:
+            df.to_csv(csv_path, sep='|', index=False)
+
         return df
 
     def plot_heatmap(self, df):
