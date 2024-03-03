@@ -12,7 +12,7 @@ class Utils():
 
     def read_pdf_to_txt(self, pdf_path, txt_path):
         '''
-        Read a PDF file and write the text to a text file
+        Read a PDF file and write the text to a text file.
 
         Args:
         pdf_path (str): The path to the PDF file
@@ -131,7 +131,9 @@ class Utils():
         df.loc[df['percentage_awarded'] == 0.0, 'percentage_awarded'] = 100.0
 
         df = df.pivot(index='application_date', columns='zone', values='percentage_awarded').fillna(0).reset_index()
-        
+        df.to_csv('./data/pivot_table.csv', sep='|', index=False)
+        df = df.drop(columns=['Colchuck_Zone', 'Core_Enchantment_Zone', 'Eightmile'])
+
         plt.figure(figsize=(10, 6))
         # plt.imshow(df.iloc[:, 1:], cmap='CMRmap', aspect='auto')
         plt.imshow(df.iloc[:, 1:], cmap='viridis', aspect='auto')
@@ -143,4 +145,92 @@ class Utils():
         plt.ylabel('Date')
         plt.clim(0, 20)
         plt.tight_layout()
+        plt.show()
+
+    def plot_barplot(self, df):
+        '''
+        Plot the DataFrame as a bar plot
+        
+        Args:
+        df (DataFrame): The DataFrame to be plotted
+
+        Returns:
+        None
+        '''
+        df['application_date'] = df['application_date'].dt.strftime('%m-%d, %a')
+        df.loc[df['percentage_awarded'] == 0.0, 'percentage_awarded'] = 100.0
+
+        df = df.pivot(index='application_date', columns='zone', values='percentage_awarded').fillna(0).reset_index()
+        df.to_csv('./data/pivot_t.csv', sep='|', index=False)
+        # df = df.drop(columns=['Colchuck_Zone', 'Core_Enchantment_Zone', 'Eightmile'])
+
+        # create a bar plot
+        fig, ax = plt.subplots(figsize=(10, 6))
+        for i, zone in enumerate(df.columns[1:]):
+            ax.bar(df['application_date'], df[zone], label=zone, alpha=0.7)
+
+        # show plot legend
+        ax.legend()
+        plt.show()
+
+    def plot_distribution(self, df, lottery_dic, simulations=1000):
+        '''
+        Plot the distribution of the expected permit odds
+        
+        Args:
+        df (DataFrame): The DataFrame to be plotted
+        
+        Returns:
+        None
+        '''
+        # Find odds to each date & zone in lottery_dic
+        for lottery in lottery_dic:
+            zone_prefix = lottery['zone'][:3]
+            matching_rows = df[(df['application_date'] == lottery['date']) & (df['zone'].str.startswith(zone_prefix))]
+            if not matching_rows.empty:
+                lottery['odds'] = matching_rows.iloc[0]['percentage_awarded']/100
+            else:
+                lottery['odds'] = None 
+    
+            lottery['name'] = lottery['date'] + " " + lottery['zone']
+        
+        outcome_df = pd.DataFrame(columns=[lottery['name'] for lottery in lottery_dic])
+
+        # Simulate the lotteries n times
+        for _ in range(simulations):
+            run_outcomes = {}
+            for lottery in lottery_dic:
+                # Simulate each lottery once per run
+                wins = np.random.binomial(n=lottery['n'], p=lottery['odds'])
+                run_outcomes[lottery['name']] = wins
+            # Append the outcomes of this run to the DataFrame
+            outcome_df = outcome_df.append(run_outcomes, ignore_index=True)
+
+        outcome_df['Total Wins'] = outcome_df.sum(axis=1)
+
+        # create a plot of the number of occurences in outcome_df['Total Wins']
+        plt.hist(outcome_df['Total Wins'], bins=range(0, 6))
+        plt.title('Outcomes from {simulations} simulations'.format(simulations=simulations))
+        plt.xlabel('Permits Awarded')
+        plt.ylabel('Frequency')
+        plt.xlim(0, 5)
+        plt.xticks(range(0, 5))
+
+        # shift x-axis labels to center over bars
+        locs, labels = plt.xticks()
+        shift = 0.5
+        new_locs = [loc + shift for loc in locs]
+        plt.xticks(new_locs, [0,1,2,3,4])
+
+        # add label with bar values
+        for i, v in enumerate(outcome_df['Total Wins'].value_counts().sort_index()):
+            plt.text(i, v, str(v), ha='left', va='bottom')
+
+        n, bins, patches = plt.hist(outcome_df['Total Wins'], bins=range(0, 6), edgecolor='black')
+        for patch, left_edge in zip(patches, bins[:-1]):
+            if left_edge == 0:
+                patch.set_facecolor('salmon')
+            else:
+                patch.set_facecolor('lightblue')
+
         plt.show()
