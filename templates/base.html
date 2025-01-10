@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enchantments Lottery Calculator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  <!-- Add any style frameworks or libraries if needed -->
+</head>
+<body style="background-color:#222; color:#eee; font-family:sans-serif;">
+  <header>
+    <h1>Enchantments Lottery Probability</h1>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <!-- Optional JS for gauge or other dynamic features -->
+  <script>
+  // Example placeholder for a gauge library or Chart.js
+  // window.onload = function() {
+  //   var gaugeValue = {{ total_probability }};
+  //   // Render gauge ...
+  // };
+  </script>
+</body>
+</html>

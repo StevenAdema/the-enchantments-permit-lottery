@@ -94,7 +94,7 @@ class Utils():
         
         new_rows_2 = df[['date_2', 'zone_2']].rename(columns={'date_2': 'application_date', 'zone_2': 'zone'})
         new_rows_3 = df[['date_3', 'zone_3']].rename(columns={'date_3': 'application_date', 'zone_3': 'zone'})
-        df_appended = df[['application_date', 'zone']].append([new_rows_2, new_rows_3], ignore_index=True)
+        df_appended = pd.concat([df[['application_date', 'zone']], new_rows_2, new_rows_3], ignore_index=True)
 
         df2 = df[['date_awarded', 'zone_awarded']]
         df2 = df2.dropna(subset=['date_awarded'])
@@ -117,6 +117,47 @@ class Utils():
 
         return df
 
+    def read_csv_to_df(self, csv_path=None, save_csv=False):
+        '''
+        Read a text file and write the contents to a DataFrame
+
+        Args:
+        csv_path (str): The path to the CSV file
+        save_csv (bool): Whether to save the DataFrame to a CSV file
+
+        Returns:
+        DataFrame: The DataFrame containing permit lottery results
+        '''
+        df = pd.read_csv(csv_path)
+        
+        if save_csv:
+            df.to_csv(csv_path, sep='|', index=False)
+        
+        new_rows_2 = df[['date_2', 'zone_2']].rename(columns={'date_2': 'application_date', 'zone_2': 'zone'})
+        new_rows_3 = df[['date_3', 'zone_3']].rename(columns={'date_3': 'application_date', 'zone_3': 'zone'})
+        df_appended = pd.concat([df[['application_date', 'zone']], new_rows_2, new_rows_3], ignore_index=True)
+
+        df2 = df[['date_awarded', 'zone_awarded']]
+        df2 = df2.dropna(subset=['date_awarded'])
+        df2 = df2.groupby(['date_awarded', 'zone_awarded'])['zone_awarded'].count().reset_index(name='awarded')
+
+        df = df_appended.groupby(['application_date','zone'])['zone'].count().reset_index(name='applications')
+
+        df = df.merge(df2, how='left', left_on=['application_date', 'zone'], right_on=['date_awarded', 'zone_awarded'])
+        df.drop(columns=['date_awarded', 'zone_awarded'], inplace=True)
+        df['application_date'] = pd.to_datetime(df['application_date'], errors='coerce')
+        df['percentage_awarded'] = 100 * (df['awarded'] / df['applications'])
+        df['percentage_awarded'] = df['percentage_awarded'].round(1)
+
+        zone_order = CategoricalDtype(['Eightmile', 'Stuart_Zone', 'Colchuck_Zone', 'Core_Enchantment_Zone', 'Snow_Zone'], ordered=True)
+        df['zone'] = df['zone'].astype(zone_order)
+        df = df.sort_values(by=['application_date','zone'])
+
+        if save_csv:
+            df.to_csv(csv_path, sep='|', index=False)
+
+        return df
+    
     def plot_heatmap(self, df):
         '''
         Plot the DataFrame as a heatmap
@@ -201,10 +242,13 @@ class Utils():
             run_outcomes = {}
             for lottery in lottery_dic:
                 # Simulate each lottery once per run
-                wins = np.random.binomial(n=lottery['n'], p=lottery['odds'])
+                if lottery['odds'] is not None:
+                    wins = np.random.binomial(n=lottery['n'], p=lottery['odds'])
+                else:
+                    wins = 0
                 run_outcomes[lottery['name']] = wins
             # Append the outcomes of this run to the DataFrame
-            outcome_df = outcome_df.append(run_outcomes, ignore_index=True)
+            outcome_df = pd.concat([outcome_df, pd.DataFrame([run_outcomes])], ignore_index=True)
 
         outcome_df['Total Wins'] = outcome_df.sum(axis=1)
 

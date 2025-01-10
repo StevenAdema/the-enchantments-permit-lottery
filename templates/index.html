@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Static Article Section -->
+<section id="article-section">
+  <h2>Lottery Process Overview</h2>
+  <p>
+    <!-- Explanation of the Enchantments lottery, hardest dates, etc. -->
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    <!-- Insert images as needed -->
+    <img src="{{ url_for('static', filename='images/example.png') }}" alt="Lottery Infographic" />
+  </p>
+</section>
+
+<hr style="border-color:#444; margin: 2em 0;" />
+
+<!-- Calculator Section -->
+<section id="calculator-section">
+  <h2>Calculate Your Chances</h2>
+  <form method="POST">
+    <!-- Error Message Display -->
+    {% if error_message %}
+      <div class="error-message">{{ error_message }}</div>
+    {% endif %}
+
+    <!-- For each of the 3 combos -->
+    <div>
+      <label for="date1">Date 1 (MM-DD):</label>
+      <input type="text" id="date1" name="date1" value="{{ selected_combos[0][0] }}" required>
+      <label for="zone1">Zone 1:</label>
+      <input type="text" id="zone1" name="zone1" value="{{ selected_combos[0][1] }}" required>
+    </div>
+
+    <div>
+      <label for="date2">Date 2 (MM-DD):</label>
+      <input type="text" id="date2" name="date2" value="{{ selected_combos[1][0] }}" required>
+      <label for="zone2">Zone 2:</label>
+      <input type="text" id="zone2" name="zone2" value="{{ selected_combos[1][1] }}" required>
+    </div>
+
+    <div>
+      <label for="date3">Date 3 (MM-DD):</label>
+      <input type="text" id="date3" name="date3" value="{{ selected_combos[2][0] }}" required>
+      <label for="zone3">Zone 3:</label>
+      <input type="text" id="zone3" name="zone3" value="{{ selected_combos[2][1] }}" required>
+    </div>
+
+    <button type="submit">Calculate</button>
+  </form>
+
+  <div class="probability-display">
+    <h3>Your Total Probability: {{ total_probability }}%</h3>
+    <!-- Gauge placeholder -->
+    <div id="gaugePlaceholder" style="width:200px; height:200px; background:#444;">
+      <!-- Insert gauge rendering logic here -->
+      <p style="text-align:center; line-height:200px;">
+        {{ total_probability }}%
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

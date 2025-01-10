@@ -5,9 +5,9 @@ import re
 import matplotlib.pyplot as plt
 from utils.func_utils import Utils
 
-pdf_path = '.\\data\\fseprd1162873.pdf'
-txt_path = '.\\data\\fseprd1162873.txt'
-csv_path = '.\\data\\fseprd1162873.csv'
+pdf_path = './data/fseprd1162873.pdf'
+txt_path = './data/fseprd1162873.txt'
+csv_path = './data/fseprd1162873.csv'
 utils = Utils()
 
 # utils.read_pdf_to_txt(pdf_path, txt_path)
@@ -15,7 +15,7 @@ utils = Utils()
 df = utils.read_txt_to_df(txt_path, csv_path, save_csv=True)
 
 # Get only July dates of interest
-df = df[(df['application_date'] >= '2023-06-20') & (df['application_date'] <= '2023-07-07')]
+df = df[(df['application_date'] >= '2023-07-20') & (df['application_date'] <= '2023-07-21')]
 
 # Print heat map of lottery permit day odds
 # utils.plot_heatmap(df)
@@ -25,10 +25,9 @@ df = df[(df['application_date'] >= '2023-06-20') & (df['application_date'] <= '2
 
 # Sample lottery selections
 lottery_dic = [
-        {'date': '2023-06-20', 'zone':'Snow Zone', 'n': 3},
-        {'date': '2023-06-21', 'zone':'Snow Zone', 'n': 3},
-        {'date': '2023-06-22', 'zone':'Stuart Zone', 'n': 2},
-        {'date': '2023-06-20', 'zone':'Core Zone', 'n': 1}
+        {'date': '2023-07-20', 'zone':'Snow Zone', 'n': 1},
+        {'date': '2023-07-21', 'zone':'Snow Zone', 'n': 1},
+        {'date': '2023-07-22', 'zone':'Stuart Zone', 'n': 1}
     ]
 
 # Print distribution plot of expected permit odds
