@@ -1,6 +1,79 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!-- Calculator Section -->
+<section id="calculator-section">
+  <p>Select your desired permits and click <b>Calculate</b> to estimate your chances of 
+    securing a camping permit. Data is based on 2024 results
+  </p>
+  <form method="POST">
+<!-- Error Message Display -->
+{% if error_message %}
+  <div class="error-message">{{ error_message }}</div>
+{% endif %}
+
+<!-- Container for the 3 combos -->
+<div class="combo-container">
+  <div id="combo">
+    <p id="selection">Permit Selection 1</p>
+    <label for="date1">Date:</label>
+    <input type="date" id="date1" name="date1" value="{{ selected_combos[0][0] or '2025-08-02' }}" required>
+    <label for="zone1">Zone:</label>
+    <select id="zone1" name="zone1" required>
+      <option value="Eightmile Zone" {% if selected_combos[0][1] == 'Eightmile Zone' %}selected{% endif %}>Eightmile Zone</option>
+      <option value="Stuart Zone" {% if selected_combos[0][1] == 'Stuart Zone' %}selected{% endif %}>Stuart Zone</option>
+      <option value="Colchuck Zone" {% if selected_combos[0][1] == 'Colchuck Zone' %}selected{% endif %}>Colchuck Zone</option>
+      <option value="Core Enchantment Zone" {% if selected_combos[0][1] == 'Core Enchantment Zone' %}selected{% elif not selected_combos[0][1] %}selected{% endif %}>Core Enchantment Zone</option>
+      <option value="Snow Zone" {% if selected_combos[0][1] == 'Snow Zone' %}selected{% endif %}>Snow Zone</option>
+    </select>
+    <!-- Display the probability for the selected combo -->
+    <p>Permit Awarded: {{individual_probabilities[0]}}%</p>
+  </div>
+
+  <div id="combo">
+    <p id="selection">Permit Selection 2</p>
+    <label for="date2">Date:</label>
+    <input type="date" id="date2" name="date2" value="{{ selected_combos[1][0] or '2025-08-02' }}" required>
+    <label for="zone2">Zone:</label>
+    <select id="zone2" name="zone2" required>
+      <option value="Eightmile Zone" {% if selected_combos[1][1] == 'Eightmile Zone' %}selected{% endif %}>Eightmile Zone</option>
+      <option value="Stuart Zone" {% if selected_combos[1][1] == 'Stuart Zone' %}selected{% endif %}>Stuart Zone</option>
+      <option value="Colchuck Zone" {% if selected_combos[1][1] == 'Colchuck Zone' %}selected{% elif not selected_combos[1][1] %}selected{% endif %}>Colchuck Zone</option>
+      <option value="Core Enchantment Zone" {% if selected_combos[1][1] == 'Core Enchantment Zone' %}selected{% endif %}>Core Enchantment Zone</option>
+      <option value="Snow Zone" {% if selected_combos[1][1] == 'Snow Zone' %}selected{% endif %}>Snow Zone</option>
+    </select>
+    <p>Permit Awarded: {{individual_probabilities[1]}}%</p>
+  </div>
+
+  <div id="combo">
+    <p id="selection">Permit Selection 3</p>
+    <label for="date3">Date:</label>
+    <input type="date" id="date3" name="date3" value="{{ selected_combos[2][0] or '2025-08-02' }}" required>
+    <label for="zone3">Zone:</label>
+    <select id="zone3" name="zone3" required>
+      <option value="Eightmile Zone" {% if selected_combos[2][1] == 'Eightmile Zone' %}selected{% endif %}>Eightmile Zone</option>
+      <option value="Stuart Zone" {% if selected_combos[2][1] == 'Stuart Zone' %}selected{% endif %}>Stuart Zone</option>
+      <option value="Colchuck Zone" {% if selected_combos[2][1] == 'Colchuck Zone' %}selected{% endif %}>Colchuck Zone</option>
+      <option value="Core Enchantment Zone" {% if selected_combos[2][1] == 'Core Enchantment Zone' %}selected{% endif %}>Core Enchantment Zone</option>
+      <option value="Snow Zone" {% if selected_combos[2][1] == 'Snow Zone' %}selected{% elif not selected_combos[2][1] %}selected{% endif %}>Snow Zone</option>
+    </select>
+    <p>Permit Awarded: {{individual_probabilities[2]}}%</p>
+  </div>
+</div>
+
+<button type="submit">Calculate</button>
+
+<div class="probability-display">
+  <h3>Your Total Probability: <span id="total-probability">{{ total_probability }}%</span></h3>
+  <div class="gauge">
+    <div class="gauge-inner">
+      <div class="gauge-needle"></div>
+      <div class="gauge-cover"></div>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- Static Article Section -->
 <section id="article-section">
   <h2>Lottery Process Overview</h2>
@@ -8,55 +81,8 @@
     <!-- Explanation of the Enchantments lottery, hardest dates, etc. -->
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     <!-- Insert images as needed -->
-    <img src="{{ url_for('static', filename='images/example.png') }}" alt="Lottery Infographic" />
+    <!-- <img src="{{ url_for('static', filename='images/example.png') }}" alt="Lottery Infographic" /> -->
   </p>
 </section>
 
-<hr style="border-color:#444; margin: 2em 0;" />
-
-<!-- Calculator Section -->
-<section id="calculator-section">
-  <h2>Calculate Your Chances</h2>
-  <form method="POST">
-    <!-- Error Message Display -->
-    {% if error_message %}
-      <div class="error-message">{{ error_message }}</div>
-    {% endif %}
-
-    <!-- For each of the 3 combos -->
-    <div>
-      <label for="date1">Date 1 (MM-DD):</label>
-      <input type="text" id="date1" name="date1" value="{{ selected_combos[0][0] }}" required>
-      <label for="zone1">Zone 1:</label>
-      <input type="text" id="zone1" name="zone1" value="{{ selected_combos[0][1] }}" required>
-    </div>
-
-    <div>
-      <label for="date2">Date 2 (MM-DD):</label>
-      <input type="text" id="date2" name="date2" value="{{ selected_combos[1][0] }}" required>
-      <label for="zone2">Zone 2:</label>
-      <input type="text" id="zone2" name="zone2" value="{{ selected_combos[1][1] }}" required>
-    </div>
-
-    <div>
-      <label for="date3">Date 3 (MM-DD):</label>
-      <input type="text" id="date3" name="date3" value="{{ selected_combos[2][0] }}" required>
-      <label for="zone3">Zone 3:</label>
-      <input type="text" id="zone3" name="zone3" value="{{ selected_combos[2][1] }}" required>
-    </div>
-
-    <button type="submit">Calculate</button>
-  </form>
-
-  <div class="probability-display">
-    <h3>Your Total Probability: {{ total_probability }}%</h3>
-    <!-- Gauge placeholder -->
-    <div id="gaugePlaceholder" style="width:200px; height:200px; background:#444;">
-      <!-- Insert gauge rendering logic here -->
-      <p style="text-align:center; line-height:200px;">
-        {{ total_probability }}%
-      </p>
-    </div>
-  </div>
-</section>
 {% endblock %}

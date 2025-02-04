@@ -10,114 +10,68 @@ class Utils():
     def print_nothing(self):
         print('nothing')
 
-    def read_pdf_to_txt(self, pdf_path, txt_path):
-        '''
-        Read a PDF file and write the text to a text file.
-
-        Args:
-        pdf_path (str): The path to the PDF file
-        txt_path (str): The path to the text file
-
-        Returns:
-        None
-        '''
-        with open(pdf_path, 'rb') as pdf_file:
-            pdf_reader = PyPDF2.PdfReader(pdf_file)
-            with open(txt_path, 'w', encoding='utf-8') as text_file:
-                for page in pdf_reader.pages:
-                    text = page.extract_text()
-                    if text:
-                        text_file.write(text + '\n')
-                    else:
-                        print(f'Could not extract text from page {pdf_reader.pages.index(page)}')
-
-    def clean_txt_file(self, txt_path):
-        '''
-        Clean the text file
-        1. Remove the '(stock)' string
-        2. Replace spaces with underscores in zone names
-        3. Write the cleaned text to a new file
-        
-        Args:
-        txt_path (str): The path to the text file to be cleaned
-
-        Returns:
-        None
-
-        '''
-        replacements = {
-            'Core Enchantment Zone': 'Core_Enchantment_Zone',
-            'Stuart  Zone': 'Stuart_Zone',
-            'Stuart Zone': 'Stuart_Zone',
-            'Colchuck Zone': 'Colchuck_Zone',
-            'Eightmile/Caroline Zone': 'Eightmile/Caroline_Zone',
-            'Snow Zone': 'Snow_Zone',
-            ' (stock)': '',
-        }
-        with open(txt_path, 'r', encoding='utf-8') as file:
-            f = file.read()
-
-        for old, new in replacements.items():
-            f = f.replace(old, new)
-
-        with open(txt_path, 'w') as file:
-            file.write(f)
-
     def read_txt_to_df(self, txt_path, csv_path=None, save_csv=False):
         '''
-        Read a text file and write the contents to a DataFrame
-
+        Read a txt file that is comma separated and write the contents to a DataFrame
+        
         Args:
         txt_path (str): The path to the text file
-        csv_path (str): The path to the CSV file
+        csv_path (str): The path to save the CSV file (optional)
         save_csv (bool): Whether to save the DataFrame to a CSV file
 
         Returns:
-        DataFrame: The DataFrame containing permit lottery results
+        DataFrame: The DataFrame containing the data from the text file
         '''
-        data = []
-        pattern = r'(\d+/\d+/\d+)\s+([A-Za-z_]+)'
-
-        with open(txt_path, 'r') as file:
-            for line in file:
-                matches = re.findall(pattern, line)
-                row = [item for match in matches for item in match]
-                while len(row) < 8:
-                    row.append(None)
-                data.append(row)
-
-        headers = ['application_date', 'zone', 'date_2', 'zone_2', 'date_3', 'zone_3', 'date_awarded', 'zone_awarded']
-        df = pd.DataFrame(data, columns=headers)
+        with open(txt_path, 'r', encoding='utf-8') as file:
+            data = file.read()
         
-        if save_csv:
-            df.to_csv(csv_path, sep='|', index=False)
+        # Convert the text data to a DataFrame
+        df = pd.read_csv(StringIO(data), sep=',')
         
-        new_rows_2 = df[['date_2', 'zone_2']].rename(columns={'date_2': 'application_date', 'zone_2': 'zone'})
-        new_rows_3 = df[['date_3', 'zone_3']].rename(columns={'date_3': 'application_date', 'zone_3': 'zone'})
-        df_appended = pd.concat([df[['application_date', 'zone']], new_rows_2, new_rows_3], ignore_index=True)
+        if save_csv and csv_path:
+            df.to_csv(csv_path, index=False)
+        
+        return df
+        
 
-        df2 = df[['date_awarded', 'zone_awarded']]
-        df2 = df2.dropna(subset=['date_awarded'])
-        df2 = df2.groupby(['date_awarded', 'zone_awarded'])['zone_awarded'].count().reset_index(name='awarded')
+    def clean_zones(self, df):
+        '''
+        Clean the dataframe using replacement dictionary for values in the 'zone' column
+        
+        Args:
+        df (DataFrame): The DataFrame to be cleaned
 
-        df = df_appended.groupby(['application_date','zone'])['zone'].count().reset_index(name='applications')
+        Returns:
+        DataFrame: The cleaned DataFrame
+        '''
+        dict_replace = {
+            'Core Enchantment Zone': 'Core Enchantment Zone',
+            'Stuart  Zone': 'Stuart Zone',
+            'Colchuck Zone': 'Colchuck Zone',
+            'Eightmile/Caroline Zone': 'Eightmile Zone',
+            'Snow Zone': 'Snow Zone'
+        }
+        df['zone'] = df['zone'].astype('category')
+        df['zone'] = df['zone'].cat.rename_categories(dict_replace)
+        df['percentage_awarded'] = df['percentage_awarded'].replace('',0).fillna(0)
+        return df
+    
+    def shift_dates(self, df, date_col, shift):
+        '''
+        Shift the dates in a DataFrame by a specified number of days
+        
+        Args:
+        df (DataFrame): The DataFrame to be shifted
+        date_col (str): The column containing the dates
+        shift (int): The number of days to shift the dates
 
-        df = df.merge(df2, how='left', left_on=['application_date', 'zone'], right_on=['date_awarded', 'zone_awarded'])
-        df.drop(columns=['date_awarded', 'zone_awarded'], inplace=True)
-        df['application_date'] = pd.to_datetime(df['application_date'], errors='coerce')
-        df['percentage_awarded'] = 100 * (df['awarded'] / df['applications'])
-        df['percentage_awarded'] = df['percentage_awarded'].round(1)
-
-        zone_order = CategoricalDtype(['Eightmile', 'Stuart_Zone', 'Colchuck_Zone', 'Core_Enchantment_Zone', 'Snow_Zone'], ordered=True)
-        df['zone'] = df['zone'].astype(zone_order)
-        df = df.sort_values(by=['application_date','zone'])
-
-        if save_csv:
-            df.to_csv(csv_path, sep='|', index=False)
-
+        Returns:
+        DataFrame: The shifted DataFrame
+        '''
+        df[date_col] = pd.to_datetime(df[date_col]) + pd.DateOffset(days=shift)
         return df
 
-    def read_csv_to_df(self, csv_path=None, save_csv=False):
+    def read_csv_to_df(self, csv_path_input=None, csv_path_output=None, save_csv=False):
         '''
         Read a text file and write the contents to a DataFrame
 
@@ -128,13 +82,19 @@ class Utils():
         Returns:
         DataFrame: The DataFrame containing permit lottery results
         '''
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv(csv_path_input)
         
         if save_csv:
-            df.to_csv(csv_path, sep='|', index=False)
+            df.to_csv(csv_path_output, index=False)
         
-        new_rows_2 = df[['date_2', 'zone_2']].rename(columns={'date_2': 'application_date', 'zone_2': 'zone'})
-        new_rows_3 = df[['date_3', 'zone_3']].rename(columns={'date_3': 'application_date', 'zone_3': 'zone'})
+        df = df.rename({
+            'Preferred Entry Date 1': 'application_date', 
+            'Preferred Division 1': 'zone', 
+            'Awarded Entry Date':'date_awarded',
+            'Awarded Entrance Code/Name':'zone_awarded'
+            }, axis=1)
+        new_rows_2 = df[['Preferred Entry Date 2', 'Preferred Division 2']].rename(columns={'Preferred Entry Date 2': 'application_date', 'Preferred Division 2': 'zone'})
+        new_rows_3 = df[['Preferred Entry Date 3', 'Preferred Division 3']].rename(columns={'Preferred Entry Date 3': 'application_date', 'Preferred Division 3': 'zone'})
         df_appended = pd.concat([df[['application_date', 'zone']], new_rows_2, new_rows_3], ignore_index=True)
 
         df2 = df[['date_awarded', 'zone_awarded']]
@@ -149,12 +109,12 @@ class Utils():
         df['percentage_awarded'] = 100 * (df['awarded'] / df['applications'])
         df['percentage_awarded'] = df['percentage_awarded'].round(1)
 
-        zone_order = CategoricalDtype(['Eightmile', 'Stuart_Zone', 'Colchuck_Zone', 'Core_Enchantment_Zone', 'Snow_Zone'], ordered=True)
+        zone_order = CategoricalDtype(['Eightmile/Caroline Zone', 'Stuart  Zone', 'Colchuck Zone', 'Core Enchantment Zone', 'Snow Zone'], ordered=True)
         df['zone'] = df['zone'].astype(zone_order)
         df = df.sort_values(by=['application_date','zone'])
 
         if save_csv:
-            df.to_csv(csv_path, sep='|', index=False)
+            df.to_csv(csv_path_output, sep='|', index=False)
 
         return df
     
@@ -173,7 +133,7 @@ class Utils():
 
         df = df.pivot(index='application_date', columns='zone', values='percentage_awarded').fillna(0).reset_index()
         df.to_csv('./data/pivot_table.csv', sep='|', index=False)
-        df = df.drop(columns=['Colchuck_Zone', 'Core_Enchantment_Zone', 'Eightmile'])
+        # df = df.drop(columns=['Colchuck Zone', 'Core Enchantment Zone', 'Eightmile Zone'])
 
         plt.figure(figsize=(10, 6))
         # plt.imshow(df.iloc[:, 1:], cmap='CMRmap', aspect='auto')

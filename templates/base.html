@@ -6,20 +6,23 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
   <!-- Add any style frameworks or libraries if needed -->
 </head>
-<body style="background-color:#222; color:#eee; font-family:sans-serif;">
+<body style="background-color:#222; font-family:sans-serif;">
   <header>
-    <h1>Enchantments Lottery Probability</h1>
+    <h1>Enchantments Lottery Calculator</h1>
   </header>
 
   {% block content %}{% endblock %}
 
   <!-- Optional JS for gauge or other dynamic features -->
   <script>
-  // Example placeholder for a gauge library or Chart.js
-  // window.onload = function() {
-  //   var gaugeValue = {{ total_probability }};
-  //   // Render gauge ...
-  // };
+    document.addEventListener('DOMContentLoaded', function() {
+      const totalProbability = parseFloat('{{ total_probability }}');
+      const gaugeNeedle = document.querySelector('.gauge-needle');
+      const maxAngle = 180; // Maximum angle for the gauge needle
+      const angle = (totalProbability / 100) * maxAngle;
+  
+      gaugeNeedle.style.transform = `rotate(${angle}deg)`;
+    });
   </script>
 </body>
 </html>

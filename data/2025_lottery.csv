@@ -1,0 +1,838 @@
+application_date,zone,applications,awarded,percentage_awarded
+2025-05-14,Eightmile Zone,1,1.0,100.0
+2025-05-14,Stuart Zone,12,3.0,25.0
+2025-05-14,Colchuck Zone,34,2.0,5.9
+2025-05-14,Core Enchantment Zone,50,5.0,10.0
+2025-05-14,Snow Zone,10,3.0,30.0
+2025-05-15,Eightmile Zone,4,2.0,50.0
+2025-05-15,Stuart Zone,9,3.0,33.3
+2025-05-15,Colchuck Zone,11,2.0,18.2
+2025-05-15,Core Enchantment Zone,37,5.0,13.5
+2025-05-15,Snow Zone,6,3.0,50.0
+2025-05-16,Eightmile Zone,6,2.0,33.3
+2025-05-16,Stuart Zone,14,3.0,21.4
+2025-05-16,Colchuck Zone,39,2.0,5.1
+2025-05-16,Core Enchantment Zone,111,5.0,4.5
+2025-05-16,Snow Zone,24,4.0,16.7
+2025-05-17,Eightmile Zone,10,2.0,20.0
+2025-05-17,Stuart Zone,25,3.0,12.0
+2025-05-17,Colchuck Zone,42,2.0,4.8
+2025-05-17,Core Enchantment Zone,124,5.0,4.0
+2025-05-17,Snow Zone,15,4.0,26.7
+2025-05-18,Eightmile Zone,2,2.0,100.0
+2025-05-18,Stuart Zone,3,3.0,100.0
+2025-05-18,Colchuck Zone,12,3.0,25.0
+2025-05-18,Core Enchantment Zone,42,7.0,16.7
+2025-05-18,Snow Zone,8,5.0,62.5
+2025-05-19,Eightmile Zone,1,1.0,100.0
+2025-05-19,Stuart Zone,5,4.0,80.0
+2025-05-19,Colchuck Zone,15,3.0,20.0pyt
+2025-05-19,Core Enchantment Zone,33,7.0,21.2
+2025-05-19,Snow Zone,6,5.0,83.3
+2025-05-20,Eightmile Zone,2,2.0,100.0
+2025-05-20,Stuart Zone,4,3.0,75.0
+2025-05-20,Colchuck Zone,9,2.0,22.2
+2025-05-20,Core Enchantment Zone,30,3.0,10.0
+2025-05-20,Snow Zone,4,3.0,75.0
+2025-05-21,Eightmile Zone,3,2.0,66.7
+2025-05-21,Stuart Zone,4,2.0,50.0
+2025-05-21,Colchuck Zone,13,2.0,15.4
+2025-05-21,Core Enchantment Zone,35,4.0,11.4
+2025-05-21,Snow Zone,4,4.0,100.0
+2025-05-22,Eightmile Zone,3,2.0,66.7
+2025-05-22,Stuart Zone,14,3.0,21.4
+2025-05-22,Colchuck Zone,18,2.0,11.1
+2025-05-22,Core Enchantment Zone,55,4.0,7.3
+2025-05-22,Snow Zone,11,4.0,36.4
+2025-05-23,Eightmile Zone,7,2.0,28.6
+2025-05-23,Stuart Zone,32,3.0,9.4
+2025-05-23,Colchuck Zone,68,2.0,2.9
+2025-05-23,Core Enchantment Zone,158,5.0,3.2
+2025-05-23,Snow Zone,47,4.0,8.5
+2025-05-24,Eightmile Zone,19,2.0,10.5
+2025-05-24,Stuart Zone,44,3.0,6.8
+2025-05-24,Colchuck Zone,83,2.0,2.4
+2025-05-24,Core Enchantment Zone,191,4.0,2.1
+2025-05-24,Snow Zone,28,4.0,14.3
+2025-05-25,Eightmile Zone,2,2.0,100.0
+2025-05-25,Stuart Zone,13,4.0,30.8
+2025-05-25,Colchuck Zone,29,3.0,10.3
+2025-05-25,Core Enchantment Zone,78,6.0,7.7
+2025-05-25,Snow Zone,23,5.0,21.7
+2025-05-26,Eightmile Zone,9,3.0,33.3
+2025-05-26,Stuart Zone,8,4.0,50.0
+2025-05-26,Colchuck Zone,11,3.0,27.3
+2025-05-26,Core Enchantment Zone,43,6.0,14.0
+2025-05-26,Snow Zone,6,4.0,66.7
+2025-05-27,Eightmile Zone,2,2.0,100.0
+2025-05-27,Stuart Zone,7,3.0,42.9
+2025-05-27,Colchuck Zone,12,2.0,16.7
+2025-05-27,Core Enchantment Zone,43,4.0,9.3
+2025-05-27,Snow Zone,11,4.0,36.4
+2025-05-28,Eightmile Zone,4,2.0,50.0
+2025-05-28,Stuart Zone,5,3.0,60.0
+2025-05-28,Colchuck Zone,17,2.0,11.8
+2025-05-28,Core Enchantment Zone,49,5.0,10.2
+2025-05-28,Snow Zone,13,4.0,30.8
+2025-05-29,Eightmile Zone,7,2.0,28.6
+2025-05-29,Stuart Zone,9,3.0,33.3
+2025-05-29,Colchuck Zone,22,2.0,9.1
+2025-05-29,Core Enchantment Zone,78,5.0,6.4
+2025-05-29,Snow Zone,14,4.0,28.6
+2025-05-30,Eightmile Zone,14,2.0,14.3
+2025-05-30,Stuart Zone,22,3.0,13.6
+2025-05-30,Colchuck Zone,85,2.0,2.4
+2025-05-30,Core Enchantment Zone,166,4.0,2.4
+2025-05-30,Snow Zone,47,4.0,8.5
+2025-05-31,Eightmile Zone,12,2.0,16.7
+2025-05-31,Stuart Zone,33,3.0,9.1
+2025-05-31,Colchuck Zone,69,2.0,2.9
+2025-05-31,Core Enchantment Zone,218,4.0,1.8
+2025-05-31,Snow Zone,31,4.0,12.9
+2025-06-01,Eightmile Zone,4,3.0,75.0
+2025-06-01,Stuart Zone,15,4.0,26.7
+2025-06-01,Colchuck Zone,21,3.0,14.3
+2025-06-01,Core Enchantment Zone,81,7.0,8.6
+2025-06-01,Snow Zone,13,5.0,38.5
+2025-06-02,Eightmile Zone,6,3.0,50.0
+2025-06-02,Stuart Zone,13,4.0,30.8
+2025-06-02,Colchuck Zone,29,3.0,10.3
+2025-06-02,Core Enchantment Zone,92,6.0,6.5
+2025-06-02,Snow Zone,15,5.0,33.3
+2025-06-03,Eightmile Zone,3,2.0,66.7
+2025-06-03,Stuart Zone,6,3.0,50.0
+2025-06-03,Colchuck Zone,20,2.0,10.0
+2025-06-03,Core Enchantment Zone,77,3.0,3.9
+2025-06-03,Snow Zone,9,4.0,44.4
+2025-06-04,Eightmile Zone,10,2.0,20.0
+2025-06-04,Stuart Zone,7,3.0,42.9
+2025-06-04,Colchuck Zone,21,2.0,9.5
+2025-06-04,Core Enchantment Zone,89,2.0,2.2
+2025-06-04,Snow Zone,25,4.0,16.0
+2025-06-05,Eightmile Zone,8,2.0,25.0
+2025-06-05,Stuart Zone,19,3.0,15.8
+2025-06-05,Colchuck Zone,51,2.0,3.9
+2025-06-05,Core Enchantment Zone,135,5.0,3.7
+2025-06-05,Snow Zone,30,4.0,13.3
+2025-06-06,Eightmile Zone,16,2.0,12.5
+2025-06-06,Stuart Zone,32,3.0,9.4
+2025-06-06,Colchuck Zone,87,2.0,2.3
+2025-06-06,Core Enchantment Zone,246,4.0,1.6
+2025-06-06,Snow Zone,48,4.0,8.3
+2025-06-07,Eightmile Zone,13,2.0,15.4
+2025-06-07,Stuart Zone,31,3.0,9.7
+2025-06-07,Colchuck Zone,90,2.0,2.2
+2025-06-07,Core Enchantment Zone,255,5.0,2.0
+2025-06-07,Snow Zone,51,4.0,7.8
+2025-06-08,Eightmile Zone,4,2.0,50.0
+2025-06-08,Stuart Zone,18,4.0,22.2
+2025-06-08,Colchuck Zone,51,3.0,5.9
+2025-06-08,Core Enchantment Zone,129,5.0,3.9
+2025-06-08,Snow Zone,35,5.0,14.3
+2025-06-09,Eightmile Zone,7,3.0,42.9
+2025-06-09,Stuart Zone,20,4.0,20.0
+2025-06-09,Colchuck Zone,50,3.0,6.0
+2025-06-09,Core Enchantment Zone,137,6.0,4.4
+2025-06-09,Snow Zone,37,5.0,13.5
+2025-06-10,Eightmile Zone,2,2.0,100.0
+2025-06-10,Stuart Zone,15,3.0,20.0
+2025-06-10,Colchuck Zone,39,2.0,5.1
+2025-06-10,Core Enchantment Zone,102,5.0,4.9
+2025-06-10,Snow Zone,30,4.0,13.3
+2025-06-11,Eightmile Zone,7,2.0,28.6
+2025-06-11,Stuart Zone,20,3.0,15.0
+2025-06-11,Colchuck Zone,43,2.0,4.7
+2025-06-11,Core Enchantment Zone,137,3.0,2.2
+2025-06-11,Snow Zone,25,4.0,16.0
+2025-06-12,Eightmile Zone,5,2.0,40.0
+2025-06-12,Stuart Zone,36,3.0,8.3
+2025-06-12,Colchuck Zone,49,2.0,4.1
+2025-06-12,Core Enchantment Zone,213,4.0,1.9
+2025-06-12,Snow Zone,30,4.0,13.3
+2025-06-13,Eightmile Zone,25,2.0,8.0
+2025-06-13,Stuart Zone,53,3.0,5.7
+2025-06-13,Colchuck Zone,122,2.0,1.6
+2025-06-13,Core Enchantment Zone,331,3.0,0.9
+2025-06-13,Snow Zone,65,4.0,6.2
+2025-06-14,Eightmile Zone,26,2.0,7.7
+2025-06-14,Stuart Zone,50,3.0,6.0
+2025-06-14,Colchuck Zone,118,2.0,1.7
+2025-06-14,Core Enchantment Zone,334,6.0,1.8
+2025-06-14,Snow Zone,41,4.0,9.8
+2025-06-15,Eightmile Zone,10,3.0,30.0
+2025-06-15,Stuart Zone,23,4.0,17.4
+2025-06-15,Colchuck Zone,64,3.0,4.7
+2025-06-15,Core Enchantment Zone,183,6.0,3.3
+2025-06-15,Snow Zone,63,5.0,7.9
+2025-06-16,Eightmile Zone,16,3.0,18.8
+2025-06-16,Stuart Zone,29,4.0,13.8
+2025-06-16,Colchuck Zone,81,3.0,3.7
+2025-06-16,Core Enchantment Zone,200,7.0,3.5
+2025-06-16,Snow Zone,27,5.0,18.5
+2025-06-17,Eightmile Zone,7,2.0,28.6
+2025-06-17,Stuart Zone,32,3.0,9.4
+2025-06-17,Colchuck Zone,71,2.0,2.8
+2025-06-17,Core Enchantment Zone,201,3.0,1.5
+2025-06-17,Snow Zone,39,4.0,10.3
+2025-06-18,Eightmile Zone,7,2.0,28.6
+2025-06-18,Stuart Zone,35,3.0,8.6
+2025-06-18,Colchuck Zone,81,2.0,2.5
+2025-06-18,Core Enchantment Zone,264,4.0,1.5
+2025-06-18,Snow Zone,40,4.0,10.0
+2025-06-19,Eightmile Zone,19,2.0,10.5
+2025-06-19,Stuart Zone,45,3.0,6.7
+2025-06-19,Colchuck Zone,95,2.0,2.1
+2025-06-19,Core Enchantment Zone,357,5.0,1.4
+2025-06-19,Snow Zone,69,4.0,5.8
+2025-06-20,Eightmile Zone,18,2.0,11.1
+2025-06-20,Stuart Zone,65,3.0,4.6
+2025-06-20,Colchuck Zone,181,2.0,1.1
+2025-06-20,Core Enchantment Zone,528,5.0,0.9
+2025-06-20,Snow Zone,89,4.0,4.5
+2025-06-21,Eightmile Zone,20,2.0,10.0
+2025-06-21,Stuart Zone,60,3.0,5.0
+2025-06-21,Colchuck Zone,135,2.0,1.5
+2025-06-21,Core Enchantment Zone,415,3.0,0.7
+2025-06-21,Snow Zone,58,4.0,6.9
+2025-06-22,Eightmile Zone,11,3.0,27.3
+2025-06-22,Stuart Zone,36,4.0,11.1
+2025-06-22,Colchuck Zone,87,3.0,3.4
+2025-06-22,Core Enchantment Zone,244,5.0,2.0
+2025-06-22,Snow Zone,72,5.0,6.9
+2025-06-23,Eightmile Zone,18,3.0,16.7
+2025-06-23,Stuart Zone,48,4.0,8.3
+2025-06-23,Colchuck Zone,103,3.0,2.9
+2025-06-23,Core Enchantment Zone,334,6.0,1.8
+2025-06-23,Snow Zone,59,5.0,8.5
+2025-06-24,Eightmile Zone,7,2.0,28.6
+2025-06-24,Stuart Zone,44,3.0,6.8
+2025-06-24,Colchuck Zone,93,2.0,2.2
+2025-06-24,Core Enchantment Zone,291,3.0,1.0
+2025-06-24,Snow Zone,68,4.0,5.9
+2025-06-25,Eightmile Zone,12,2.0,16.7
+2025-06-25,Stuart Zone,32,3.0,9.4
+2025-06-25,Colchuck Zone,112,2.0,1.8
+2025-06-25,Core Enchantment Zone,328,3.0,0.9
+2025-06-25,Snow Zone,76,4.0,5.3
+2025-06-26,Eightmile Zone,25,2.0,8.0
+2025-06-26,Stuart Zone,34,3.0,8.8
+2025-06-26,Colchuck Zone,125,2.0,1.6
+2025-06-26,Core Enchantment Zone,407,3.0,0.7
+2025-06-26,Snow Zone,59,4.0,6.8
+2025-06-27,Eightmile Zone,36,2.0,5.6
+2025-06-27,Stuart Zone,67,3.0,4.5
+2025-06-27,Colchuck Zone,227,2.0,0.9
+2025-06-27,Core Enchantment Zone,587,4.0,0.7
+2025-06-27,Snow Zone,99,4.0,4.0
+2025-06-28,Eightmile Zone,18,2.0,11.1
+2025-06-28,Stuart Zone,68,3.0,4.4
+2025-06-28,Colchuck Zone,150,2.0,1.3
+2025-06-28,Core Enchantment Zone,431,5.0,1.2
+2025-06-28,Snow Zone,73,4.0,5.5
+2025-06-29,Eightmile Zone,8,3.0,37.5
+2025-06-29,Stuart Zone,56,4.0,7.1
+2025-06-29,Colchuck Zone,94,3.0,3.2
+2025-06-29,Core Enchantment Zone,300,7.0,2.3
+2025-06-29,Snow Zone,135,5.0,3.7
+2025-06-30,Eightmile Zone,20,3.0,15.0
+2025-06-30,Stuart Zone,53,4.0,7.5
+2025-06-30,Colchuck Zone,121,3.0,2.5
+2025-06-30,Core Enchantment Zone,381,5.0,1.3
+2025-06-30,Snow Zone,88,5.0,5.7
+2025-07-01,Eightmile Zone,9,2.0,22.2
+2025-07-01,Stuart Zone,25,3.0,12.0
+2025-07-01,Colchuck Zone,64,2.0,3.1
+2025-07-01,Core Enchantment Zone,280,5.0,1.8
+2025-07-01,Snow Zone,47,4.0,8.5
+2025-07-02,Eightmile Zone,8,2.0,25.0
+2025-07-02,Stuart Zone,39,3.0,7.7
+2025-07-02,Colchuck Zone,96,2.0,2.1
+2025-07-02,Core Enchantment Zone,325,2.0,0.6
+2025-07-02,Snow Zone,76,4.0,5.3
+2025-07-03,Eightmile Zone,34,2.0,5.9
+2025-07-03,Stuart Zone,78,3.0,3.8
+2025-07-03,Colchuck Zone,210,2.0,1.0
+2025-07-03,Core Enchantment Zone,767,3.0,0.4
+2025-07-03,Snow Zone,138,4.0,2.9
+2025-07-04,Eightmile Zone,25,2.0,8.0
+2025-07-04,Stuart Zone,80,3.0,3.8
+2025-07-04,Colchuck Zone,205,2.0,1.0
+2025-07-04,Core Enchantment Zone,602,5.0,0.8
+2025-07-04,Snow Zone,79,4.0,5.1
+2025-07-05,Eightmile Zone,22,2.0,9.1
+2025-07-05,Stuart Zone,57,3.0,5.3
+2025-07-05,Colchuck Zone,139,2.0,1.4
+2025-07-05,Core Enchantment Zone,383,2.0,0.5
+2025-07-05,Snow Zone,45,4.0,8.9
+2025-07-06,Eightmile Zone,13,3.0,23.1
+2025-07-06,Stuart Zone,37,4.0,10.8
+2025-07-06,Colchuck Zone,88,3.0,3.4
+2025-07-06,Core Enchantment Zone,328,5.0,1.5
+2025-07-06,Snow Zone,75,5.0,6.7
+2025-07-07,Eightmile Zone,13,3.0,23.1
+2025-07-07,Stuart Zone,49,4.0,8.2
+2025-07-07,Colchuck Zone,149,3.0,2.0
+2025-07-07,Core Enchantment Zone,480,6.0,1.2
+2025-07-07,Snow Zone,78,5.0,6.4
+2025-07-08,Eightmile Zone,14,2.0,14.3
+2025-07-08,Stuart Zone,39,3.0,7.7
+2025-07-08,Colchuck Zone,118,2.0,1.7
+2025-07-08,Core Enchantment Zone,448,5.0,1.1
+2025-07-08,Snow Zone,82,4.0,4.9
+2025-07-09,Eightmile Zone,8,2.0,25.0
+2025-07-09,Stuart Zone,30,3.0,10.0
+2025-07-09,Colchuck Zone,121,2.0,1.7
+2025-07-09,Core Enchantment Zone,416,4.0,1.0
+2025-07-09,Snow Zone,71,4.0,5.6
+2025-07-10,Eightmile Zone,24,2.0,8.3
+2025-07-10,Stuart Zone,94,3.0,3.2
+2025-07-10,Colchuck Zone,189,2.0,1.1
+2025-07-10,Core Enchantment Zone,723,4.0,0.6
+2025-07-10,Snow Zone,126,4.0,3.2
+2025-07-11,Eightmile Zone,42,2.0,4.8
+2025-07-11,Stuart Zone,120,3.0,2.5
+2025-07-11,Colchuck Zone,306,2.0,0.7
+2025-07-11,Core Enchantment Zone,923,5.0,0.5
+2025-07-11,Snow Zone,148,4.0,2.7
+2025-07-12,Eightmile Zone,38,2.0,5.3
+2025-07-12,Stuart Zone,92,3.0,3.3
+2025-07-12,Colchuck Zone,237,2.0,0.8
+2025-07-12,Core Enchantment Zone,731,4.0,0.5
+2025-07-12,Snow Zone,93,4.0,4.3
+2025-07-13,Eightmile Zone,20,3.0,15.0
+2025-07-13,Stuart Zone,43,4.0,9.3
+2025-07-13,Colchuck Zone,122,3.0,2.5
+2025-07-13,Core Enchantment Zone,458,5.0,1.1
+2025-07-13,Snow Zone,103,5.0,4.9
+2025-07-14,Eightmile Zone,28,3.0,10.7
+2025-07-14,Stuart Zone,72,4.0,5.6
+2025-07-14,Colchuck Zone,180,3.0,1.7
+2025-07-14,Core Enchantment Zone,680,7.0,1.0
+2025-07-14,Snow Zone,125,5.0,4.0
+2025-07-15,Eightmile Zone,18,2.0,11.1
+2025-07-15,Stuart Zone,58,3.0,5.2
+2025-07-15,Colchuck Zone,154,2.0,1.3
+2025-07-15,Core Enchantment Zone,648,6.0,0.9
+2025-07-15,Snow Zone,102,4.0,3.9
+2025-07-16,Eightmile Zone,14,2.0,14.3
+2025-07-16,Stuart Zone,65,3.0,4.6
+2025-07-16,Colchuck Zone,160,2.0,1.2
+2025-07-16,Core Enchantment Zone,647,4.0,0.6
+2025-07-16,Snow Zone,112,4.0,3.6
+2025-07-17,Eightmile Zone,35,2.0,5.7
+2025-07-17,Stuart Zone,94,3.0,3.2
+2025-07-17,Colchuck Zone,248,2.0,0.8
+2025-07-17,Core Enchantment Zone,1022,5.0,0.5
+2025-07-17,Snow Zone,129,4.0,3.1
+2025-07-18,Eightmile Zone,53,2.0,3.8
+2025-07-18,Stuart Zone,147,3.0,2.0
+2025-07-18,Colchuck Zone,382,2.0,0.5
+2025-07-18,Core Enchantment Zone,1250,4.0,0.3
+2025-07-18,Snow Zone,178,4.0,2.2
+2025-07-19,Eightmile Zone,38,2.0,5.3
+2025-07-19,Stuart Zone,112,3.0,2.7
+2025-07-19,Colchuck Zone,279,2.0,0.7
+2025-07-19,Core Enchantment Zone,969,4.0,0.4
+2025-07-19,Snow Zone,133,4.0,3.0
+2025-07-20,Eightmile Zone,23,3.0,13.0
+2025-07-20,Stuart Zone,50,4.0,8.0
+2025-07-20,Colchuck Zone,151,3.0,2.0
+2025-07-20,Core Enchantment Zone,628,6.0,1.0
+2025-07-20,Snow Zone,120,5.0,4.2
+2025-07-21,Eightmile Zone,31,3.0,9.7
+2025-07-21,Stuart Zone,79,4.0,5.1
+2025-07-21,Colchuck Zone,213,3.0,1.4
+2025-07-21,Core Enchantment Zone,813,6.0,0.7
+2025-07-21,Snow Zone,131,5.0,3.8
+2025-07-22,Eightmile Zone,17,2.0,11.8
+2025-07-22,Stuart Zone,67,3.0,4.5
+2025-07-22,Colchuck Zone,186,2.0,1.1
+2025-07-22,Core Enchantment Zone,732,7.0,1.0
+2025-07-22,Snow Zone,155,4.0,2.6
+2025-07-23,Eightmile Zone,34,2.0,5.9
+2025-07-23,Stuart Zone,74,3.0,4.1
+2025-07-23,Colchuck Zone,193,2.0,1.0
+2025-07-23,Core Enchantment Zone,800,4.0,0.5
+2025-07-23,Snow Zone,137,4.0,2.9
+2025-07-24,Eightmile Zone,47,2.0,4.3
+2025-07-24,Stuart Zone,96,3.0,3.1
+2025-07-24,Colchuck Zone,295,2.0,0.7
+2025-07-24,Core Enchantment Zone,1125,4.0,0.4
+2025-07-24,Snow Zone,162,4.0,2.5
+2025-07-25,Eightmile Zone,76,2.0,2.6
+2025-07-25,Stuart Zone,164,3.0,1.8
+2025-07-25,Colchuck Zone,391,2.0,0.5
+2025-07-25,Core Enchantment Zone,1371,3.0,0.2
+2025-07-25,Snow Zone,199,4.0,2.0
+2025-07-26,Eightmile Zone,43,2.0,4.7
+2025-07-26,Stuart Zone,115,3.0,2.6
+2025-07-26,Colchuck Zone,260,2.0,0.8
+2025-07-26,Core Enchantment Zone,929,4.0,0.4
+2025-07-26,Snow Zone,151,4.0,2.6
+2025-07-27,Eightmile Zone,24,3.0,12.5
+2025-07-27,Stuart Zone,79,4.0,5.1
+2025-07-27,Colchuck Zone,154,3.0,1.9
+2025-07-27,Core Enchantment Zone,619,5.0,0.8
+2025-07-27,Snow Zone,138,5.0,3.6
+2025-07-28,Eightmile Zone,25,3.0,12.0
+2025-07-28,Stuart Zone,63,4.0,6.3
+2025-07-28,Colchuck Zone,218,3.0,1.4
+2025-07-28,Core Enchantment Zone,821,8.0,1.0
+2025-07-28,Snow Zone,134,5.0,3.7
+2025-07-29,Eightmile Zone,12,2.0,16.7
+2025-07-29,Stuart Zone,49,3.0,6.1
+2025-07-29,Colchuck Zone,133,2.0,1.5
+2025-07-29,Core Enchantment Zone,652,5.0,0.8
+2025-07-29,Snow Zone,107,4.0,3.7
+2025-07-30,Eightmile Zone,19,2.0,10.5
+2025-07-30,Stuart Zone,48,3.0,6.2
+2025-07-30,Colchuck Zone,178,2.0,1.1
+2025-07-30,Core Enchantment Zone,783,5.0,0.6
+2025-07-30,Snow Zone,130,4.0,3.1
+2025-07-31,Eightmile Zone,46,2.0,4.3
+2025-07-31,Stuart Zone,142,3.0,2.1
+2025-07-31,Colchuck Zone,321,2.0,0.6
+2025-07-31,Core Enchantment Zone,1318,4.0,0.3
+2025-07-31,Snow Zone,198,4.0,2.0
+2025-08-01,Eightmile Zone,57,2.0,3.5
+2025-08-01,Stuart Zone,128,3.0,2.3
+2025-08-01,Colchuck Zone,348,2.0,0.6
+2025-08-01,Core Enchantment Zone,1292,2.0,0.2
+2025-08-01,Snow Zone,207,4.0,1.9
+2025-08-02,Eightmile Zone,28,2.0,7.1
+2025-08-02,Stuart Zone,112,3.0,2.7
+2025-08-02,Colchuck Zone,267,2.0,0.7
+2025-08-02,Core Enchantment Zone,952,3.0,0.3
+2025-08-02,Snow Zone,129,4.0,3.1
+2025-08-03,Eightmile Zone,30,3.0,10.0
+2025-08-03,Stuart Zone,54,4.0,7.4
+2025-08-03,Colchuck Zone,162,3.0,1.9
+2025-08-03,Core Enchantment Zone,658,6.0,0.9
+2025-08-03,Snow Zone,114,5.0,4.4
+2025-08-04,Eightmile Zone,30,3.0,10.0
+2025-08-04,Stuart Zone,88,4.0,4.5
+2025-08-04,Colchuck Zone,256,3.0,1.2
+2025-08-04,Core Enchantment Zone,958,6.0,0.6
+2025-08-04,Snow Zone,166,5.0,3.0
+2025-08-05,Eightmile Zone,15,2.0,13.3
+2025-08-05,Stuart Zone,62,3.0,4.8
+2025-08-05,Colchuck Zone,182,2.0,1.1
+2025-08-05,Core Enchantment Zone,838,4.0,0.5
+2025-08-05,Snow Zone,129,4.0,3.1
+2025-08-06,Eightmile Zone,14,2.0,14.3
+2025-08-06,Stuart Zone,53,3.0,5.7
+2025-08-06,Colchuck Zone,184,2.0,1.1
+2025-08-06,Core Enchantment Zone,846,5.0,0.6
+2025-08-06,Snow Zone,116,4.0,3.4
+2025-08-07,Eightmile Zone,30,2.0,6.7
+2025-08-07,Stuart Zone,93,3.0,3.2
+2025-08-07,Colchuck Zone,230,2.0,0.9
+2025-08-07,Core Enchantment Zone,1127,3.0,0.3
+2025-08-07,Snow Zone,183,4.0,2.2
+2025-08-08,Eightmile Zone,51,2.0,3.9
+2025-08-08,Stuart Zone,137,3.0,2.2
+2025-08-08,Colchuck Zone,357,2.0,0.6
+2025-08-08,Core Enchantment Zone,1353,4.0,0.3
+2025-08-08,Snow Zone,189,4.0,2.1
+2025-08-09,Eightmile Zone,44,2.0,4.5
+2025-08-09,Stuart Zone,106,3.0,2.8
+2025-08-09,Colchuck Zone,253,2.0,0.8
+2025-08-09,Core Enchantment Zone,915,3.0,0.3
+2025-08-09,Snow Zone,137,4.0,2.9
+2025-08-10,Eightmile Zone,32,3.0,9.4
+2025-08-10,Stuart Zone,66,4.0,6.1
+2025-08-10,Colchuck Zone,160,3.0,1.9
+2025-08-10,Core Enchantment Zone,643,4.0,0.6
+2025-08-10,Snow Zone,140,5.0,3.6
+2025-08-11,Eightmile Zone,40,3.0,7.5
+2025-08-11,Stuart Zone,100,4.0,4.0
+2025-08-11,Colchuck Zone,187,3.0,1.6
+2025-08-11,Core Enchantment Zone,907,8.0,0.9
+2025-08-11,Snow Zone,169,5.0,3.0
+2025-08-12,Eightmile Zone,26,2.0,7.7
+2025-08-12,Stuart Zone,73,3.0,4.1
+2025-08-12,Colchuck Zone,180,2.0,1.1
+2025-08-12,Core Enchantment Zone,856,6.0,0.7
+2025-08-12,Snow Zone,134,4.0,3.0
+2025-08-13,Eightmile Zone,29,2.0,6.9
+2025-08-13,Stuart Zone,76,3.0,3.9
+2025-08-13,Colchuck Zone,171,2.0,1.2
+2025-08-13,Core Enchantment Zone,891,3.0,0.3
+2025-08-13,Snow Zone,126,4.0,3.2
+2025-08-14,Eightmile Zone,37,2.0,5.4
+2025-08-14,Stuart Zone,121,3.0,2.5
+2025-08-14,Colchuck Zone,250,2.0,0.8
+2025-08-14,Core Enchantment Zone,1108,6.0,0.5
+2025-08-14,Snow Zone,148,4.0,2.7
+2025-08-15,Eightmile Zone,59,2.0,3.4
+2025-08-15,Stuart Zone,144,3.0,2.1
+2025-08-15,Colchuck Zone,352,2.0,0.6
+2025-08-15,Core Enchantment Zone,1340,6.0,0.4
+2025-08-15,Snow Zone,185,4.0,2.2
+2025-08-16,Eightmile Zone,39,2.0,5.1
+2025-08-16,Stuart Zone,108,3.0,2.8
+2025-08-16,Colchuck Zone,252,2.0,0.8
+2025-08-16,Core Enchantment Zone,903,2.0,0.2
+2025-08-16,Snow Zone,127,4.0,3.1
+2025-08-17,Eightmile Zone,23,3.0,13.0
+2025-08-17,Stuart Zone,66,4.0,6.1
+2025-08-17,Colchuck Zone,164,3.0,1.8
+2025-08-17,Core Enchantment Zone,604,6.0,1.0
+2025-08-17,Snow Zone,146,5.0,3.4
+2025-08-18,Eightmile Zone,27,3.0,11.1
+2025-08-18,Stuart Zone,91,4.0,4.4
+2025-08-18,Colchuck Zone,197,3.0,1.5
+2025-08-18,Core Enchantment Zone,883,7.0,0.8
+2025-08-18,Snow Zone,153,5.0,3.3
+2025-08-19,Eightmile Zone,28,2.0,7.1
+2025-08-19,Stuart Zone,77,3.0,3.9
+2025-08-19,Colchuck Zone,191,2.0,1.0
+2025-08-19,Core Enchantment Zone,749,4.0,0.5
+2025-08-19,Snow Zone,110,4.0,3.6
+2025-08-20,Eightmile Zone,20,2.0,10.0
+2025-08-20,Stuart Zone,64,3.0,4.7
+2025-08-20,Colchuck Zone,147,2.0,1.4
+2025-08-20,Core Enchantment Zone,732,5.0,0.7
+2025-08-20,Snow Zone,139,4.0,2.9
+2025-08-21,Eightmile Zone,37,2.0,5.4
+2025-08-21,Stuart Zone,103,3.0,2.9
+2025-08-21,Colchuck Zone,237,2.0,0.8
+2025-08-21,Core Enchantment Zone,1017,2.0,0.2
+2025-08-21,Snow Zone,154,4.0,2.6
+2025-08-22,Eightmile Zone,47,2.0,4.3
+2025-08-22,Stuart Zone,121,3.0,2.5
+2025-08-22,Colchuck Zone,301,2.0,0.7
+2025-08-22,Core Enchantment Zone,1095,3.0,0.3
+2025-08-22,Snow Zone,148,4.0,2.7
+2025-08-23,Eightmile Zone,29,2.0,6.9
+2025-08-23,Stuart Zone,93,3.0,3.2
+2025-08-23,Colchuck Zone,201,2.0,1.0
+2025-08-23,Core Enchantment Zone,767,4.0,0.5
+2025-08-23,Snow Zone,104,4.0,3.8
+2025-08-24,Eightmile Zone,33,3.0,9.1
+2025-08-24,Stuart Zone,52,4.0,7.7
+2025-08-24,Colchuck Zone,147,3.0,2.0
+2025-08-24,Core Enchantment Zone,534,6.0,1.1
+2025-08-24,Snow Zone,115,5.0,4.3
+2025-08-25,Eightmile Zone,18,3.0,16.7
+2025-08-25,Stuart Zone,64,4.0,6.2
+2025-08-25,Colchuck Zone,151,3.0,2.0
+2025-08-25,Core Enchantment Zone,688,4.0,0.6
+2025-08-25,Snow Zone,123,5.0,4.1
+2025-08-26,Eightmile Zone,12,2.0,16.7
+2025-08-26,Stuart Zone,46,3.0,6.5
+2025-08-26,Colchuck Zone,85,2.0,2.4
+2025-08-26,Core Enchantment Zone,603,5.0,0.8
+2025-08-26,Snow Zone,101,4.0,4.0
+2025-08-27,Eightmile Zone,12,2.0,16.7
+2025-08-27,Stuart Zone,51,3.0,5.9
+2025-08-27,Colchuck Zone,124,2.0,1.6
+2025-08-27,Core Enchantment Zone,665,4.0,0.6
+2025-08-27,Snow Zone,101,4.0,4.0
+2025-08-28,Eightmile Zone,27,2.0,7.4
+2025-08-28,Stuart Zone,69,3.0,4.3
+2025-08-28,Colchuck Zone,199,2.0,1.0
+2025-08-28,Core Enchantment Zone,788,4.0,0.5
+2025-08-28,Snow Zone,130,4.0,3.1
+2025-08-29,Eightmile Zone,40,2.0,5.0
+2025-08-29,Stuart Zone,126,3.0,2.4
+2025-08-29,Colchuck Zone,268,2.0,0.7
+2025-08-29,Core Enchantment Zone,1051,5.0,0.5
+2025-08-29,Snow Zone,139,4.0,2.9
+2025-08-30,Eightmile Zone,38,2.0,5.3
+2025-08-30,Stuart Zone,140,3.0,2.1
+2025-08-30,Colchuck Zone,224,2.0,0.9
+2025-08-30,Core Enchantment Zone,877,4.0,0.5
+2025-08-30,Snow Zone,144,4.0,2.8
+2025-08-31,Eightmile Zone,14,3.0,21.4
+2025-08-31,Stuart Zone,42,4.0,9.5
+2025-08-31,Colchuck Zone,110,3.0,2.7
+2025-08-31,Core Enchantment Zone,490,7.0,1.4
+2025-08-31,Snow Zone,75,5.0,6.7
+2025-09-01,Eightmile Zone,9,3.0,33.3
+2025-09-01,Stuart Zone,39,4.0,10.3
+2025-09-01,Colchuck Zone,85,3.0,3.5
+2025-09-01,Core Enchantment Zone,417,8.0,1.9
+2025-09-01,Snow Zone,50,5.0,10.0
+2025-09-02,Eightmile Zone,14,2.0,14.3
+2025-09-02,Stuart Zone,32,3.0,9.4
+2025-09-02,Colchuck Zone,88,2.0,2.3
+2025-09-02,Core Enchantment Zone,552,5.0,0.9
+2025-09-02,Snow Zone,88,4.0,4.5
+2025-09-03,Eightmile Zone,15,2.0,13.3
+2025-09-03,Stuart Zone,36,3.0,8.3
+2025-09-03,Colchuck Zone,108,2.0,1.9
+2025-09-03,Core Enchantment Zone,613,4.0,0.7
+2025-09-03,Snow Zone,94,5.0,5.3
+2025-09-04,Eightmile Zone,19,2.0,10.5
+2025-09-04,Stuart Zone,78,3.0,3.8
+2025-09-04,Colchuck Zone,142,2.0,1.4
+2025-09-04,Core Enchantment Zone,729,5.0,0.7
+2025-09-04,Snow Zone,127,4.0,3.1
+2025-09-05,Eightmile Zone,35,2.0,5.7
+2025-09-05,Stuart Zone,113,3.0,2.7
+2025-09-05,Colchuck Zone,205,2.0,1.0
+2025-09-05,Core Enchantment Zone,920,4.0,0.4
+2025-09-05,Snow Zone,159,4.0,2.5
+2025-09-06,Eightmile Zone,22,2.0,9.1
+2025-09-06,Stuart Zone,69,3.0,4.3
+2025-09-06,Colchuck Zone,154,2.0,1.3
+2025-09-06,Core Enchantment Zone,618,5.0,0.8
+2025-09-06,Snow Zone,94,4.0,4.3
+2025-09-07,Eightmile Zone,35,3.0,8.6
+2025-09-07,Stuart Zone,48,4.0,8.3
+2025-09-07,Colchuck Zone,133,3.0,2.3
+2025-09-07,Core Enchantment Zone,584,6.0,1.0
+2025-09-07,Snow Zone,121,5.0,4.1
+2025-09-08,Eightmile Zone,26,3.0,11.5
+2025-09-08,Stuart Zone,58,4.0,6.9
+2025-09-08,Colchuck Zone,146,3.0,2.1
+2025-09-08,Core Enchantment Zone,700,6.0,0.9
+2025-09-08,Snow Zone,111,5.0,4.5
+2025-09-09,Eightmile Zone,15,2.0,13.3
+2025-09-09,Stuart Zone,53,3.0,5.7
+2025-09-09,Colchuck Zone,155,2.0,1.3
+2025-09-09,Core Enchantment Zone,778,6.0,0.8
+2025-09-09,Snow Zone,127,4.0,3.1
+2025-09-10,Eightmile Zone,11,2.0,18.2
+2025-09-10,Stuart Zone,46,3.0,6.5
+2025-09-10,Colchuck Zone,125,2.0,1.6
+2025-09-10,Core Enchantment Zone,638,5.0,0.8
+2025-09-10,Snow Zone,125,4.0,3.2
+2025-09-11,Eightmile Zone,19,2.0,10.5
+2025-09-11,Stuart Zone,71,3.0,4.2
+2025-09-11,Colchuck Zone,194,2.0,1.0
+2025-09-11,Core Enchantment Zone,853,5.0,0.6
+2025-09-11,Snow Zone,113,4.0,3.5
+2025-09-12,Eightmile Zone,49,2.0,4.1
+2025-09-12,Stuart Zone,113,3.0,2.7
+2025-09-12,Colchuck Zone,238,2.0,0.8
+2025-09-12,Core Enchantment Zone,1008,4.0,0.4
+2025-09-12,Snow Zone,156,4.0,2.6
+2025-09-13,Eightmile Zone,24,2.0,8.3
+2025-09-13,Stuart Zone,87,3.0,3.4
+2025-09-13,Colchuck Zone,171,2.0,1.2
+2025-09-13,Core Enchantment Zone,663,5.0,0.8
+2025-09-13,Snow Zone,94,4.0,4.3
+2025-09-14,Eightmile Zone,13,3.0,23.1
+2025-09-14,Stuart Zone,58,4.0,6.9
+2025-09-14,Colchuck Zone,111,3.0,2.7
+2025-09-14,Core Enchantment Zone,504,5.0,1.0
+2025-09-14,Snow Zone,118,5.0,4.2
+2025-09-15,Eightmile Zone,13,3.0,23.1
+2025-09-15,Stuart Zone,59,4.0,6.8
+2025-09-15,Colchuck Zone,120,3.0,2.5
+2025-09-15,Core Enchantment Zone,611,8.0,1.3
+2025-09-15,Snow Zone,97,5.0,5.2
+2025-09-16,Eightmile Zone,19,2.0,10.5
+2025-09-16,Stuart Zone,32,3.0,9.4
+2025-09-16,Colchuck Zone,83,2.0,2.4
+2025-09-16,Core Enchantment Zone,602,6.0,1.0
+2025-09-16,Snow Zone,81,4.0,4.9
+2025-09-17,Eightmile Zone,14,2.0,14.3
+2025-09-17,Stuart Zone,31,3.0,9.7
+2025-09-17,Colchuck Zone,103,2.0,1.9
+2025-09-17,Core Enchantment Zone,524,3.0,0.6
+2025-09-17,Snow Zone,105,4.0,3.8
+2025-09-18,Eightmile Zone,19,2.0,10.5
+2025-09-18,Stuart Zone,63,3.0,4.8
+2025-09-18,Colchuck Zone,136,2.0,1.5
+2025-09-18,Core Enchantment Zone,711,5.0,0.7
+2025-09-18,Snow Zone,99,4.0,4.0
+2025-09-19,Eightmile Zone,32,2.0,6.2
+2025-09-19,Stuart Zone,74,4.0,5.4
+2025-09-19,Colchuck Zone,172,2.0,1.2
+2025-09-19,Core Enchantment Zone,752,3.0,0.4
+2025-09-19,Snow Zone,123,4.0,3.3
+2025-09-20,Eightmile Zone,12,2.0,16.7
+2025-09-20,Stuart Zone,64,3.0,4.7
+2025-09-20,Colchuck Zone,101,2.0,2.0
+2025-09-20,Core Enchantment Zone,494,4.0,0.8
+2025-09-20,Snow Zone,90,4.0,4.4
+2025-09-21,Eightmile Zone,14,3.0,21.4
+2025-09-21,Stuart Zone,32,4.0,12.5
+2025-09-21,Colchuck Zone,81,3.0,3.7
+2025-09-21,Core Enchantment Zone,402,6.0,1.5
+2025-09-21,Snow Zone,85,5.0,5.9
+2025-09-22,Eightmile Zone,6,3.0,50.0
+2025-09-22,Stuart Zone,29,4.0,13.8
+2025-09-22,Colchuck Zone,68,3.0,4.4
+2025-09-22,Core Enchantment Zone,436,5.0,1.1
+2025-09-22,Snow Zone,60,5.0,8.3
+2025-09-23,Eightmile Zone,5,2.0,40.0
+2025-09-23,Stuart Zone,26,3.0,11.5
+2025-09-23,Colchuck Zone,72,2.0,2.8
+2025-09-23,Core Enchantment Zone,424,3.0,0.7
+2025-09-23,Snow Zone,53,4.0,7.5
+2025-09-24,Eightmile Zone,8,2.0,25.0
+2025-09-24,Stuart Zone,24,3.0,12.5
+2025-09-24,Colchuck Zone,77,2.0,2.6
+2025-09-24,Core Enchantment Zone,449,5.0,1.1
+2025-09-24,Snow Zone,76,4.0,5.3
+2025-09-25,Eightmile Zone,9,2.0,22.2
+2025-09-25,Stuart Zone,58,3.0,5.2
+2025-09-25,Colchuck Zone,123,2.0,1.6
+2025-09-25,Core Enchantment Zone,608,2.0,0.3
+2025-09-25,Snow Zone,84,4.0,4.8
+2025-09-26,Eightmile Zone,23,2.0,8.7
+2025-09-26,Stuart Zone,80,3.0,3.8
+2025-09-26,Colchuck Zone,142,2.0,1.4
+2025-09-26,Core Enchantment Zone,644,5.0,0.8
+2025-09-26,Snow Zone,82,4.0,4.9
+2025-09-27,Eightmile Zone,11,2.0,18.2
+2025-09-27,Stuart Zone,56,3.0,5.4
+2025-09-27,Colchuck Zone,113,2.0,1.8
+2025-09-27,Core Enchantment Zone,450,4.0,0.9
+2025-09-27,Snow Zone,51,4.0,7.8
+2025-09-28,Eightmile Zone,9,3.0,33.3
+2025-09-28,Stuart Zone,26,4.0,15.4
+2025-09-28,Colchuck Zone,71,3.0,4.2
+2025-09-28,Core Enchantment Zone,335,8.0,2.4
+2025-09-28,Snow Zone,91,5.0,5.5
+2025-09-29,Eightmile Zone,10,3.0,30.0
+2025-09-29,Stuart Zone,18,4.0,22.2
+2025-09-29,Colchuck Zone,58,3.0,5.2
+2025-09-29,Core Enchantment Zone,337,6.0,1.8
+2025-09-29,Snow Zone,35,5.0,14.3
+2025-09-30,Eightmile Zone,9,2.0,22.2
+2025-09-30,Stuart Zone,35,3.0,8.6
+2025-09-30,Colchuck Zone,87,2.0,2.3
+2025-09-30,Core Enchantment Zone,382,4.0,1.0
+2025-09-30,Snow Zone,52,4.0,7.7
+2025-10-01,Eightmile Zone,4,2.0,50.0
+2025-10-01,Stuart Zone,18,3.0,16.7
+2025-10-01,Colchuck Zone,65,2.0,3.1
+2025-10-01,Core Enchantment Zone,370,4.0,1.1
+2025-10-01,Snow Zone,69,4.0,5.8
+2025-10-02,Eightmile Zone,13,2.0,15.4
+2025-10-02,Stuart Zone,41,3.0,7.3
+2025-10-02,Colchuck Zone,83,2.0,2.4
+2025-10-02,Core Enchantment Zone,520,5.0,1.0
+2025-10-02,Snow Zone,68,4.0,5.9
+2025-10-03,Eightmile Zone,26,2.0,7.7
+2025-10-03,Stuart Zone,76,3.0,3.9
+2025-10-03,Colchuck Zone,115,2.0,1.7
+2025-10-03,Core Enchantment Zone,617,3.0,0.5
+2025-10-03,Snow Zone,75,4.0,5.3
+2025-10-04,Eightmile Zone,13,2.0,15.4
+2025-10-04,Stuart Zone,39,3.0,7.7
+2025-10-04,Colchuck Zone,86,2.0,2.3
+2025-10-04,Core Enchantment Zone,449,3.0,0.7
+2025-10-04,Snow Zone,49,4.0,8.2
+2025-10-05,Eightmile Zone,9,3.0,33.3
+2025-10-05,Stuart Zone,30,4.0,13.3
+2025-10-05,Colchuck Zone,54,3.0,5.6
+2025-10-05,Core Enchantment Zone,344,5.0,1.5
+2025-10-05,Snow Zone,68,5.0,7.4
+2025-10-06,Eightmile Zone,4,3.0,75.0
+2025-10-06,Stuart Zone,23,4.0,17.4
+2025-10-06,Colchuck Zone,48,3.0,6.2
+2025-10-06,Core Enchantment Zone,295,9.0,3.1
+2025-10-06,Snow Zone,24,5.0,20.8
+2025-10-07,Eightmile Zone,6,2.0,33.3
+2025-10-07,Stuart Zone,11,3.0,27.3
+2025-10-07,Colchuck Zone,28,2.0,7.1
+2025-10-07,Core Enchantment Zone,242,3.0,1.2
+2025-10-07,Snow Zone,14,4.0,28.6
+2025-10-08,Eightmile Zone,2,2.0,100.0
+2025-10-08,Stuart Zone,13,3.0,23.1
+2025-10-08,Colchuck Zone,28,2.0,7.1
+2025-10-08,Core Enchantment Zone,185,4.0,2.2
+2025-10-08,Snow Zone,33,4.0,12.1
+2025-10-09,Eightmile Zone,9,2.0,22.2
+2025-10-09,Stuart Zone,16,3.0,18.8
+2025-10-09,Colchuck Zone,35,2.0,5.7
+2025-10-09,Core Enchantment Zone,274,4.0,1.5
+2025-10-09,Snow Zone,37,4.0,10.8
+2025-10-10,Eightmile Zone,22,2.0,9.1
+2025-10-10,Stuart Zone,38,3.0,7.9
+2025-10-10,Colchuck Zone,70,2.0,2.9
+2025-10-10,Core Enchantment Zone,324,4.0,1.2
+2025-10-10,Snow Zone,57,4.0,7.0
+2025-10-11,Eightmile Zone,8,2.0,25.0
+2025-10-11,Stuart Zone,24,3.0,12.5
+2025-10-11,Colchuck Zone,55,2.0,3.6
+2025-10-11,Core Enchantment Zone,244,5.0,2.0
+2025-10-11,Snow Zone,41,4.0,9.8
+2025-10-12,Eightmile Zone,7,3.0,42.9
+2025-10-12,Stuart Zone,13,4.0,30.8
+2025-10-12,Colchuck Zone,35,3.0,8.6
+2025-10-12,Core Enchantment Zone,183,6.0,3.3
+2025-10-12,Snow Zone,34,5.0,14.7
+2025-10-13,Eightmile Zone,5,3.0,60.0
+2025-10-13,Stuart Zone,11,4.0,36.4
+2025-10-13,Colchuck Zone,15,3.0,20.0
+2025-10-13,Core Enchantment Zone,93,5.0,5.4
+2025-10-13,Snow Zone,11,5.0,45.5
+2025-10-14,Eightmile Zone,1,1.0,100.0
+2025-10-14,Stuart Zone,3,2.0,66.7
+2025-10-14,Colchuck Zone,21,2.0,9.5
+2025-10-14,Core Enchantment Zone,73,4.0,5.5
+2025-10-14,Snow Zone,10,4.0,40.0
+2025-10-15,Eightmile Zone,1,1.0,100.0
+2025-10-15,Stuart Zone,7,3.0,42.9
+2025-10-15,Colchuck Zone,17,2.0,11.8
+2025-10-15,Core Enchantment Zone,58,4.0,6.9
+2025-10-15,Snow Zone,7,4.0,57.1
+2025-10-16,Eightmile Zone,5,2.0,40.0
+2025-10-16,Stuart Zone,6,3.0,50.0
+2025-10-16,Colchuck Zone,17,2.0,11.8
+2025-10-16,Core Enchantment Zone,67,3.0,4.5
+2025-10-16,Snow Zone,11,4.0,36.4
+2025-10-17,Eightmile Zone,5,2.0,40.0
+2025-10-17,Stuart Zone,10,3.0,30.0
+2025-10-17,Colchuck Zone,15,2.0,13.3
+2025-10-17,Core Enchantment Zone,86,5.0,5.8
+2025-10-17,Snow Zone,14,4.0,28.6
+2025-10-18,Stuart Zone,8,3.0,37.5
+2025-10-18,Colchuck Zone,9,2.0,22.2
+2025-10-18,Core Enchantment Zone,64,3.0,4.7
+2025-10-18,Snow Zone,10,4.0,40.0
+2025-10-19,Eightmile Zone,2,1.0,50.0
+2025-10-19,Stuart Zone,2,1.0,50.0
+2025-10-19,Colchuck Zone,9,3.0,33.3
+2025-10-19,Core Enchantment Zone,45,6.0,13.3
+2025-10-19,Snow Zone,6,3.0,50.0
+2025-10-20,Eightmile Zone,1,,0.0
+2025-10-20,Stuart Zone,1,1.0,100.0
+2025-10-20,Colchuck Zone,3,2.0,66.7
+2025-10-20,Core Enchantment Zone,20,7.0,35.0
+2025-10-20,Snow Zone,5,4.0,80.0
+2025-10-21,Eightmile Zone,1,,0.0
+2025-10-21,Stuart Zone,1,1.0,100.0
+2025-10-21,Colchuck Zone,7,2.0,28.6
+2025-10-21,Core Enchantment Zone,18,4.0,22.2
+2025-10-21,Snow Zone,2,1.0,50.0
+2025-10-22,Stuart Zone,3,2.0,66.7
+2025-10-22,Colchuck Zone,5,2.0,40.0
+2025-10-22,Core Enchantment Zone,17,4.0,23.5
+2025-10-22,Snow Zone,1,1.0,100.0
+2025-10-23,Eightmile Zone,1,,0.0
+2025-10-23,Stuart Zone,6,3.0,50.0
+2025-10-23,Colchuck Zone,1,1.0,100.0
+2025-10-23,Core Enchantment Zone,25,4.0,16.0
+2025-10-24,Eightmile Zone,1,1.0,100.0
+2025-10-24,Colchuck Zone,3,2.0,66.7
+2025-10-24,Core Enchantment Zone,35,4.0,11.4
+2025-10-24,Snow Zone,3,2.0,66.7
+2025-10-25,Eightmile Zone,1,1.0,100.0
+2025-10-25,Colchuck Zone,4,2.0,50.0
+2025-10-25,Core Enchantment Zone,25,4.0,16.0
+2025-10-25,Snow Zone,3,3.0,100.0
+2025-10-26,Stuart Zone,1,1.0,100.0
+2025-10-26,Colchuck Zone,3,2.0,66.7
+2025-10-26,Core Enchantment Zone,6,4.0,66.7
+2025-10-26,Snow Zone,1,1.0,100.0
+2025-10-27,Stuart Zone,3,2.0,66.7
+2025-10-27,Colchuck Zone,3,2.0,66.7
+2025-10-27,Core Enchantment Zone,7,5.0,71.4
+2025-10-27,Snow Zone,2,1.0,50.0
+2025-10-28,Eightmile Zone,1,,0.0
+2025-10-28,Stuart Zone,1,1.0,100.0
+2025-10-28,Colchuck Zone,1,1.0,100.0
+2025-10-28,Core Enchantment Zone,2,2.0,100.0
+2025-10-29,Stuart Zone,1,,0.0
+2025-10-29,Core Enchantment Zone,4,2.0,50.0
+2025-10-30,Stuart Zone,1,1.0,100.0
+2025-10-30,Colchuck Zone,1,1.0,100.0
+2025-10-30,Core Enchantment Zone,3,2.0,66.7

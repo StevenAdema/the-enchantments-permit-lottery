@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Path to CSV file (adjust if needed)
-CSV_PATH = os.path.join(os.path.dirname(__file__), 'data', 'data.csv')
+CSV_PATH = os.path.join(os.path.dirname(__file__), 'data', '2025_lottery.csv')
 
 # Load CSV into a dictionary for quick lookup:
 # data_lookup[(date, zone)] = probability
@@ -15,7 +15,10 @@ def load_data(csv_path=CSV_PATH):
         reader = csv.DictReader(f)
         for row in reader:
             key = (row['application_date'], row['zone'])
-            data_lookup[key] = float(row['precentage_awarded'])
+            try:
+                data_lookup[key] = float(row['percentage_awarded'])
+            except (ValueError, KeyError):
+                data_lookup[key] = 100.0
     return data_lookup
 
 data_lookup = load_data()
@@ -43,17 +46,24 @@ def calculate_probability(date_zone_list):
     # 1 - Π(1 - P(each selection))
     # P is in percentages in CSV
     total_probability = 1.0
+    individual_probabilities = []
     for date_str, zone_str in date_zone_list:
         p = data_lookup.get((date_str, zone_str), 0.0) / 100.0
+        individual_probabilities.append(p * 100)  # Store as percentage
         total_probability *= (1 - p)
-    return round((1 - total_probability) * 100, 2)  # Return as percentage
+    print(individual_probabilities)
+    total_probability_percentage = round((1 - total_probability) * 100, 1)  # Return as percentage
+    return total_probability_percentage, individual_probabilities
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     error_message = ""
-    total_probability = 0.0
+    total_probability = 4.1  # Initialize with default value    
+    individual_probabilities = [0.3, 0.7, 3.1]  # Initialize with default values
     # Pre-populate or store user selections
-    selected_combos = [("", ""), ("", ""), ("", "")]
+    selected_combos = [("2025-08-02", "Core Enchantment Zone"), 
+                       ("2025-08-02", "Colchuck Zone"), 
+                       ("2025-08-02", "Snow Zone")]
 
     if request.method == 'POST':
         # Retrieve combos from form
@@ -73,13 +83,14 @@ def index():
         # Validate
         valid, error_message = validate_input(selected_combos)
         if valid:
-            total_probability = calculate_probability(selected_combos)
+            total_probability, individual_probabilities = calculate_probability(selected_combos)
 
     return render_template(
         'index.html',
         error_message=error_message,
         total_probability=total_probability,
-        selected_combos=selected_combos
+        selected_combos=selected_combos,
+        individual_probabilities=individual_probabilities
     )
 
 if __name__ == '__main__':
