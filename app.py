@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import csv
 import os
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -24,6 +25,7 @@ def load_data(csv_path=CSV_PATH):
 data_lookup = load_data()
 
 def validate_input(date_zone_list):
+    return True, ""  # Placeholder for now
     # Ensure 3 unique combos and date within May–Oct 2025
     # Return (is_valid, error_message)
     unique_set = set()
@@ -33,10 +35,13 @@ def validate_input(date_zone_list):
         if combo in unique_set:
             return False, f"Duplicate combination: {date_str} + {zone_str}"
         unique_set.add(combo)
-
-        # Basic date-range check (placeholder - actual validation can parse date)
-        # E.g., "YYYY-MM-DD" format or "MM-DD" with a year check
-        # If not valid, return (False, "Invalid date")
+        # Basic date-range check
+        try:
+            date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+            if not (date_obj.year == 2025 and 5 <= date_obj.month <= 10):
+                return False, f"Date out of range: {date_str}"
+        except ValueError:
+            return False, f"Invalid date format: {date_str}"
         # ...
 
     return True, ""
@@ -51,19 +56,16 @@ def calculate_probability(date_zone_list):
         p = data_lookup.get((date_str, zone_str), 0.0) / 100.0
         individual_probabilities.append(p * 100)  # Store as percentage
         total_probability *= (1 - p)
-    print(individual_probabilities)
-    total_probability_percentage = round((1 - total_probability) * 100, 1)  # Return as percentage
+    total_probability_percentage = round((1 - total_probability) * 100, 2)  # Return as percentage
     return total_probability_percentage, individual_probabilities
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     error_message = ""
-    total_probability = 4.1  # Initialize with default value    
+    total_probability = 0.0
     individual_probabilities = [0.3, 0.7, 3.1]  # Initialize with default values
     # Pre-populate or store user selections
-    selected_combos = [("2025-08-02", "Core Enchantment Zone"), 
-                       ("2025-08-02", "Colchuck Zone"), 
-                       ("2025-08-02", "Snow Zone")]
+    selected_combos = [("", ""), ("", ""), ("", "")]
 
     if request.method == 'POST':
         # Retrieve combos from form
@@ -84,6 +86,8 @@ def index():
         valid, error_message = validate_input(selected_combos)
         if valid:
             total_probability, individual_probabilities = calculate_probability(selected_combos)
+        else:
+            print('Validation failed:', error_message)
 
     return render_template(
         'index.html',

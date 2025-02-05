@@ -4,7 +4,7 @@
 <!-- Calculator Section -->
 <section id="calculator-section">
   <p>Select your desired permits and click <b>Calculate</b> to estimate your chances of 
-    securing a camping permit. Data is based on 2024 results
+    securing a camping permit. Data is based on 2024 results.
   </p>
   <form method="POST">
 <!-- Error Message Display -->
@@ -27,7 +27,7 @@
       <option value="Snow Zone" {% if selected_combos[0][1] == 'Snow Zone' %}selected{% endif %}>Snow Zone</option>
     </select>
     <!-- Display the probability for the selected combo -->
-    <p>Permit Awarded: {{individual_probabilities[0]}}%</p>
+    <p>Permit Awarded: <b>{{individual_probabilities[0]}}%</b></p>
   </div>
 
   <div id="combo">
@@ -42,7 +42,7 @@
       <option value="Core Enchantment Zone" {% if selected_combos[1][1] == 'Core Enchantment Zone' %}selected{% endif %}>Core Enchantment Zone</option>
       <option value="Snow Zone" {% if selected_combos[1][1] == 'Snow Zone' %}selected{% endif %}>Snow Zone</option>
     </select>
-    <p>Permit Awarded: {{individual_probabilities[1]}}%</p>
+    <p>Permit Awarded: <b>{{individual_probabilities[1]}}%</b></p>
   </div>
 
   <div id="combo">
@@ -57,19 +57,18 @@
       <option value="Core Enchantment Zone" {% if selected_combos[2][1] == 'Core Enchantment Zone' %}selected{% endif %}>Core Enchantment Zone</option>
       <option value="Snow Zone" {% if selected_combos[2][1] == 'Snow Zone' %}selected{% elif not selected_combos[2][1] %}selected{% endif %}>Snow Zone</option>
     </select>
-    <p>Permit Awarded: {{individual_probabilities[2]}}%</p>
+    <p>Permit Awarded: <b>{{individual_probabilities[2]}}%</b></p>
   </div>
 </div>
 
 <button type="submit">Calculate</button>
 
 <div class="probability-display">
-  <h3>Your Total Probability: <span id="total-probability">{{ total_probability }}%</span></h3>
-  <div class="gauge">
-    <div class="gauge-inner">
-      <div class="gauge-needle"></div>
-      <div class="gauge-cover"></div>
-    </div>
+  <div id="total-probability">
+    <h3>Permit Success Chance: </h3>
+  </div>
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progress-bar" style="width: {{ total_probability or 4.1 }}%;">{{ total_probability or 4 }}%</div>
   </div>
 </div>
 </section>
@@ -78,10 +77,7 @@
 <section id="article-section">
   <h2>Lottery Process Overview</h2>
   <p>
-    <!-- Explanation of the Enchantments lottery, hardest dates, etc. -->
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    <!-- Insert images as needed -->
-    <!-- <img src="{{ url_for('static', filename='images/example.png') }}" alt="Lottery Infographic" /> -->
   </p>
 </section>
 

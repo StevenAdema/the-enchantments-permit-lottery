@@ -6,22 +6,100 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
   <!-- Add any style frameworks or libraries if needed -->
 </head>
-<body style="background-color:#222; font-family:sans-serif;">
+<body style="font-family:sans-serif;">
   <header>
     <h1>Enchantments Lottery Calculator</h1>
   </header>
 
-  {% block content %}{% endblock %}
+  <div id="progress-container">
+    <div id="progress-bar" style="width: 0%; height: 20px; background-color: green;"></div>
+  </div>
+  {% block content %}
+  <form id="probability-form" method="POST" action="/">
+    <!-- Your form fields here -->
+    <div class="combo-container">
+      <div>
+        <label for="date1">Date 1:</label>
+        <input type="date" id="date1" name="date1" value="{{ selected_combos[0][0] or '2025-08-02' }}" required>
+        <label for="zone1">Zone 1:</label>
+        <select id="zone1" name="zone1" required>
+          <option value="Eightmile Zone" {% if selected_combos[0][1] == 'Eightmile Zone' %}selected{% endif %}>Eightmile Zone</option>
+          <option value="Stuart Zone" {% if selected_combos[0][1] == 'Stuart Zone' %}selected{% endif %}>Stuart Zone</option>
+          <option value="Colchuck Zone" {% if selected_combos[0][1] == 'Colchuck Zone' %}selected{% endif %}>Colchuck Zone</option>
+          <option value="Core Enchantment Zone" {% if selected_combos[0][1] == 'Core Enchantment Zone' %}selected{% elif not selected_combos[0][1] %}selected{% endif %}>Core Enchantment Zone</option>
+          <option value="Snow Zone" {% if selected_combos[0][1] == 'Snow Zone' %}selected{% endif %}>Snow Zone</option>
+        </select>
+        <p>Percentage Awarded: {{ percentage_awarded[0] }}%</p>
+      </div>
+  
+      <div>
+        <label for="date2">Date 2:</label>
+        <input type="date" id="date2" name="date2" value="{{ selected_combos[1][0] or '2025-08-02' }}" required>
+        <label for="zone2">Zone 2:</label>
+        <select id="zone2" name="zone2" required>
+          <option value="Eightmile Zone" {% if selected_combos[1][1] == 'Eightmile Zone' %}selected{% endif %}>Eightmile Zone</option>
+          <option value="Stuart Zone" {% if selected_combos[1][1] == 'Stuart Zone' %}selected{% endif %}>Stuart Zone</option>
+          <option value="Colchuck Zone" {% if selected_combos[1][1] == 'Colchuck Zone' %}selected{% elif not selected_combos[1][1] %}selected{% endif %}>Colchuck Zone</option>
+          <option value="Core Enchantment Zone" {% if selected_combos[1][1] == 'Core Enchantment Zone' %}selected{% endif %}>Core Enchantment Zone</option>
+          <option value="Snow Zone" {% if selected_combos[1][1] == 'Snow Zone' %}selected{% endif %}>Snow Zone</option>
+        </select>
+        <p>Percentage Awarded: {{ percentage_awarded[1] }}%</p>
+      </div>
+  
+      <div>
+        <label for="date3">Date 3:</label>
+        <input type="date" id="date3" name="date3" value="{{ selected_combos[2][0] or '2025-08-02' }}" required>
+        <label for="zone3">Zone 3:</label>
+        <select id="zone3" name="zone3" required>
+          <option value="Eightmile Zone" {% if selected_combos[2][1] == 'Eightmile Zone' %}selected{% endif %}>Eightmile Zone</option>
+          <option value="Stuart Zone" {% if selected_combos[2][1] == 'Stuart Zone' %}selected{% endif %}>Stuart Zone</option>
+          <option value="Colchuck Zone" {% if selected_combos[2][1] == 'Colchuck Zone' %}selected{% endif %}>Colchuck Zone</option>
+          <option value="Core Enchantment Zone" {% if selected_combos[2][1] == 'Core Enchantment Zone' %}selected{% endif %}>Core Enchantment Zone</option>
+          <option value="Snow Zone" {% if selected_combos[2][1] == 'Snow Zone' %}selected{% elif not selected_combos[2][1] %}selected{% endif %}>Snow Zone</option>
+        </select>
+        <p>Percentage Awarded: {{ percentage_awarded[2] }}%</p>
+      </div>
+    </div>
+  
+    <button type="submit">Calculate</button>
+  </form>
+  
+  <div class="probability-display">
+    <h3>Your Total Probability: <span id="total-probability">{{ total_probability }}%</span></h3>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </div>
+  {% endblock %}
 
   <!-- Optional JS for gauge or other dynamic features -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const totalProbability = parseFloat('{{ total_probability }}');
-      const gaugeNeedle = document.querySelector('.gauge-needle');
-      const maxAngle = 180; // Maximum angle for the gauge needle
-      const angle = (totalProbability / 100) * maxAngle;
+      const form = document.getElementById('probability-form');
+      const progressBar = document.getElementById('progress-bar');
+      const totalProbabilitySpan = document.getElementById('total-probability');
   
-      gaugeNeedle.style.transform = `rotate(${angle}deg)`;
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+  
+        const formData = new FormData(form);
+  
+        fetch('/', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          const totalProbability = parseFloat(data.total_probability);
+          
+          // Update the progress bar width
+          progressBar.style.width = `${totalProbability}%`;
+  
+          // Update the displayed total probability
+          totalProbabilitySpan.textContent = `${totalProbability}%`;
+        })
+        .catch(error => console.error('Error:', error));
+      });
     });
   </script>
 </body>
